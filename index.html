@@ -4,139 +4,175 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sepatu Aerostreet X Wonderful Indonesia</title>
+    <link rel="stylesheet" href="styles.css" />
 
     <!-- Icon -->
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
-    <nav>
-      <a href="index.html">
+    <nav class="navbar">
+      <a href="index.html" class="navbar-logo">
         <span>Aerostreet X</span>
-        <img
-          src="download.png"
-          alt="Logo Wonderful Indonesia"
-          width="100"
-          height="50"
-        />
+        <img src="img/download.jpg" alt="Logo Wonderful Indonesia" />
       </a>
-      <div>
+      <div class="navbar-nav">
         <a href="#">Produk Terbaru</a>
         <a href="#">Pria</a>
         <a href="#">Wanita</a>
         <a href="#">Anak</a>
-        <a href="#">Tentang Kami</a>
+        <a href="#Tentang">Tentang Kami</a>
       </div>
-      <div>
+      <div class="navbar-extra">
         <a href="#" id="search"><i data-feather="search"></i></a>
         <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
         <a href="#" id="user"><i data-feather="user"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
     </nav>
+    <!-- sale -->
+    <div class="brand">
+      <h4>AEROSTREET OUTLET SALE - EXTRAS 30% OFF</h4>
+      <a href="#">Buy Now</a>
+    </div>
+
     <!-- video -->
-    <section>
-      <video width="600" controls>
+    <section class="watch">
+      <video controls>
         <source src="vidio.mp4" type="vidio/mp4" />
         Browser anda tidak mendukung vidio
       </video>
-      <h1>Wonderful Shoes</h1>
-      <h2>Sole and Style</h2>
     </section>
     <!-- Tombol Belanja -->
-    <section>
-      <a href="#belanja">Belanja Sekarang</a>
+    <section class="introduction">
+      <h1>Wonderful Shoes</h1>
+      <p>
+        Aerostreet x Wonderful Indonesia Sepatu edisi spesial hasil kolaborasi
+        Aerostreet dengan kampanye Wonderful Indonesia. Terinspirasi dari
+        kekayaan budaya Nusantara dengan motif khas dari berbagai pulau besar
+        Indonesia. Nyaman dipakai sehari-hari, desain stylish, dan punya nilai
+        kebanggaan karena mengangkat identitas lokal.
+      </p>
+      <a href="#belanja" class="btn-belanja">Belanja Sekarang</a>
     </section>
     <!-- Scroling produk -->
-    <section>
-      <h3>Produk Nusantara</h3>
-      <div>
+    <section class="produk">
+      <h2>Produk Nusantara</h2>
+      <div class="scroll">
         <div>
-          <img src="img/bali.jpg" alt="Sepatu" width="100" />
+          <img src="img/bali.png" alt="Sepatu" />
           <p>Bali</p>
-          <p>Rp 2.500.000,00</p>
+          <span>Rp 2.500.000,00</span>
+          <span
+            ><b>Ornamen Pepatran </b><br />Motif karya seni dari tanaman
+            merambat yang digunakan untuk menghias rumah atay tempat suci di
+            bali</span
+          >
+          <a href="#">Order Sekarang</a>
         </div>
         <div>
-          <img src="img/sumatera.jpeg" alt="Sepatu" width="100" />
+          <img src="img/sumatera.png" alt="Sepatu" />
           <p>Sumatera</p>
-          <p>Rp 2.500.000,00</p>
+          <span>Rp 2.500.000,00</span>
+          <span
+            ><b>Gorga Simeol-Meol</b><br />Motif karya seni dari sulur tanaman
+            sebagai simbol sukacita, dan kesehatan, serta panjang umur bagi
+            generasi</span
+          >
+          <a href="#">Order Sekarang</a>
         </div>
         <div>
-          <img src="img/kalimantan.jpg" alt="Sepatu" width="100" />
+          <img src="img/kalimantan.png" alt="Sepatu" />
           <p>Kalimantan</p>
-          <p>Rp 2.500.000,00</p>
+          <span>Rp 2.500.000,00</span>
+          <span
+            ><b>Motif Dayak</b><br />Motif karya seni yang mengandung nilai
+            filosofi dan spritual utnuk mencerminkan hubungan erat anatara
+            manusia, alam, dan dunia spritual</span
+          >
+          <a href="#">Order Sekarang</a>
         </div>
         <div>
-          <img src="img/papua.jpg" alt="Sepatu" width="100" />
+          <img src="img/papua.png" alt="Sepatu" />
           <p>Papua</p>
-          <p>Rp 2.500.000,00</p>
+          <span>Rp 2.500.000,00</span>
+          <span
+            ><b>Batik Asmat</b><br />Motif karya seni yang menggambarkan budaya,
+            traddisi, semangat, keberanian, kebiasaan hidup keseharian masyrakat
+            Papua yang harmonis dan bahagia</span
+          >
+          <a href="#">Order Sekarang</a>
         </div>
         <div>
-          <img src="img/jawa.jpg" alt="Sepatu" width="100" />
+          <img src="img/jawa.png" alt="Sepatu" />
           <p>Jawa</p>
-          <p>Rp 2.500.000,00</p>
+          <span>Rp 2.500.000,00</span>
+          <span
+            ><b>Batik Tujuh Rupa</b><br />Motif karya seni yang kaya akan nuansa
+            alam. Menggabungkan unsur budaya lokal dan etnis Tionghoa yang
+            mencerminkan akulturasi budaya yang unik dan khas</span
+          >
+          <a href="#">Order Sekarang</a>
         </div>
       </div>
     </section>
-    <section>
-      <div>
+    <section class="footer-info">
+      <div class="ending">
         <div>
-          <h4>Dukungan</h4>
+          <h3>Dukungan</h3>
           <a href="#">Pertanyaan umum</a>
-          <br>
           <a href="#">Hubungi kami</a>
-          <br>
           <a href="#">Pengiriman</a>
-          <br>
           <a href="#">Panduan ukuran</a>
-          <br>
         </div>
-        <h4>Tentang kami</h4>
-        <a href="#">Perusahan</a>
-        <br>
-        <a href="#">Visi dan Misi</a>
-        <br>
-        <a href="#">Nilai brand</a>
-        <br>
+        <div id="Tentang">
+          <h3>Tentang kami</h3>
+          <a href="#">Perusahan</a>
+          <a href="#">Visi dan Misi</a>
+          <a href="#">Nilai brand</a>
+        </div>
+        <div>
+          <h3>Alamat</h3>
+          <a href="#">Jl Sambaliung Gedung A24</a>
+          <p>Samarinda utara</p>
+          <p>Kode pos : 11789</p>
+        </div>
+        <div>
+          <h3>Layanan Pengaduan</h3>
+          <p>Jam kerja : Senin - Jumat, 07.30 WITA - 17.00 WITA</p>
+          <p>Email : <a href="#">AerostreetXwonderful62@gmail.com</a></p>
+          <p>Telp : <a href="#">+6281268735096</a></p>
+        </div>
       </div>
-      </div>
+      <footer>
+        <div class="footer-items">
+          <div class="footer-item">
+            <a href="#" id="Youtube"><i data-feather="youtube"></i></a>
+            <p>AerostreetXwonderfulIndonesi</p>
+          </div>
+          <div class="footer-item">
+            <a href="#" id="instgaram"><i data-feather="instagram"></i></a>
+            <p>@AerostreetXwonderfulIndonesi</p>
+          </div>
+          <div class="footer-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2c1.2 0 2.4.5 3.3 1.4.9.9 1.4 2.1 1.4 3.3 0 .3 0 .6-.1.9 1.1.8 2.4 1.2 3.9 1.2v3.4c-1.8 0-3.5-.5-5-1.4v6.6c0 3.4-2.7 6.1-6.1 6.1s-6.1-2.7-6.1-6.1 2.7-6.1 6.1-6.1c.2 0 .4 0 .6.1v3.5c-.2 0-.4-.1-.6-.1-1.4 0-2.6 1.2-2.6 2.6s1.2 2.6 2.6 2.6 2.6-1.2 2.6-2.6V2h3z"
+              />
+            </svg>
+            <p>@AerostreetXwonderfulIndonesi</p>
+          </div>
+          <div class="footer-item">
+            <a href="#" id="facebook"><i data-feather="facebook"></i></a>
+            <p>AerostreetXwonderfulIndonesi</p>
+          </div>
+        </div>
+      </footer>
     </section>
-    <footer>
-      <div>
-        <p><b>©Aerostreet X Wonderful Indonesia</b></p>
-        <p>Jl Sambaliung Gedung A24</p>
-        <p>Samarinda utara</p>
-        <p>Kode pos : 11789</p>
-      </div>
-      <div>
-        <p><b>Layanan Pengaduan</b></p>
-        <p><b>Jam kerja : </b>Senin - Jumat, 07.30 WITA - 17.00 WITA</p>
-        <p><b>Email : </b>AerostreetXwonderful62@gmail.com</p>
-        <p><b>Telp : </b> +62 81268735096</p>
-      </div>
-      <div>
-        <div>
-          <img src="img/yt.jpg" alt="Logo Youtube" width="50">
-          <p>AerostreetXwonderfulIndonesi</p>
-        </div>
-        <div>
-          <img src="img/instagram.jpg" alt="Logo instagram" width="50">
-          <p>@AerostreetXwonderfulIndonesi</p>
-        </div>
-        <div>
-          <img src="img/tiktok.jpg" alt="Logo Tiktok" width="50">
-          <p>@AerostreetXwonderfulIndonesi</p>
-        </div>
-        <div>
-          <img src="img/fb.jpg" alt="Logo Facebook" width="50">
-          <p>AerostreetXwonderfulIndonesi</p>
-        </div>
-      </div>
-
-      <div>
-        <p>Referensi Desain</p>
-        <a href="https://id.puma.com/en/puma-outlet-id?gad_source=1&gad_campaignid=22907885652&gbraid=0AAAAAC8EoW--GTyJiNW2P8hMT-JJucjVy&gclid=CjwKCAjwz5nGBhBBEiwA-W6XRLmTQtjIboN5kbILbhGc7SELHrL__IJmjXVzz9mLtuPqrjPHpHPU2hoCIZkQAvD_BwE" target="_blank">Puma</a>
-      </div>
-    </footer>
     <script>
       feather.replace();
     </script>
