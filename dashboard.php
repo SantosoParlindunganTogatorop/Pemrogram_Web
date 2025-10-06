@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Jika belum login, redirect ke login
+if (!isset($_SESSION['username'])) {
+  header("Location: login.php?status=unauthorized");
+  exit;
+}
+
+$username = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +23,7 @@
   </head>
   <body>
     <nav class="navbar">
-      <a href="index.html" class="navbar-logo">
+      <a href="#" class="navbar-logo">
         <span>Aerostreet X</span>
         <img src="img/download.jpg" alt="Logo Wonderful Indonesia" />
       </a>
@@ -25,11 +37,19 @@
       <div class="navbar-extra">
         <a href="#" id="search"><i data-feather="search"></i></a>
         <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
-        <a href="#" id="user"><i data-feather="user"></i></a>
+        <!-- <a href="#" id="user"><i data-feather="user"></i></a> -->
+        <a href="logout.php" id="logout" style="color: red;"><i data-feather="log-out"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
         <a href="#" id="dark-mode-toggle"><i data-feather="moon"></i></a>
       </div>
     </nav>
+
+    <!-- Pesan selamat datang -->
+    <div class="welcome">
+      <h3>Selamat datang, <?php echo htmlspecialchars($username); ?>!</h3>
+    </div>
+
+
     <!-- sale -->
     <div class="brand">
       <h4>AEROSTREET OUTLET SALE - EXTRAS 30% OFF</h4>
@@ -39,10 +59,11 @@
     <!-- video -->
     <section class="watch">
       <video controls>
-        <source src="vidio.mp4" type="vidio/mp4" />
-        Browser anda tidak mendukung vidio
+        <source src="vidio.mp4" type="video/mp4" />
+        Browser anda tidak mendukung video
       </video>
     </section>
+
     <!-- Tombol Belanja -->
     <section class="introduction">
       <h1>Wonderful Shoes</h1>
@@ -55,7 +76,8 @@
       </p>
       <a href="#belanja" class="btn-belanja">Belanja Sekarang</a>
     </section>
-    <!-- Scroling produk -->
+
+    <!-- Scrolling produk -->
     <section class="produk">
       <h2>Produk Nusantara</h2>
       <div class="scroll">
@@ -63,59 +85,45 @@
           <img src="img/bali.png" alt="Sepatu" />
           <p>Bali</p>
           <span>Rp 2.500.000,00</span>
-          <span
-            ><b>Ornamen Pepatran </b><br />Motif karya seni dari tanaman
-            merambat yang digunakan untuk menghias rumah atay tempat suci di
-            bali</span
-          >
+          <span><b>Ornamen Pepatran</b><br />Motif karya seni dari tanaman
+          merambat yang digunakan untuk menghias rumah atau tempat suci di Bali</span>
           <a href="#">Order Sekarang</a>
         </div>
         <div>
           <img src="img/sumatera.png" alt="Sepatu" />
           <p>Sumatera</p>
           <span>Rp 2.500.000,00</span>
-          <span
-            ><b>Gorga Simeol-Meol</b><br />Motif karya seni dari sulur tanaman
-            sebagai simbol sukacita, dan kesehatan, serta panjang umur bagi
-            generasi</span
-          >
+          <span><b>Gorga Simeol-Meol</b><br />Motif karya seni dari sulur tanaman
+          sebagai simbol sukacita, kesehatan, serta panjang umur bagi generasi</span>
           <a href="#">Order Sekarang</a>
         </div>
         <div>
           <img src="img/kalimantan.png" alt="Sepatu" />
           <p>Kalimantan</p>
           <span>Rp 2.500.000,00</span>
-          <span
-            ><b>Motif Dayak</b><br />Motif karya seni yang mengandung nilai
-            filosofi dan spritual utnuk mencerminkan hubungan erat anatara
-            manusia, alam, dan dunia spritual</span
-          >
+          <span><b>Motif Dayak</b><br />Motif seni yang mencerminkan hubungan erat antara
+          manusia, alam, dan dunia spiritual</span>
           <a href="#">Order Sekarang</a>
         </div>
         <div>
           <img src="img/papua.png" alt="Sepatu" />
           <p>Papua</p>
           <span>Rp 2.500.000,00</span>
-          <span
-            ><b>Batik Asmat</b><br />Motif karya seni yang menggambarkan budaya,
-            traddisi, semangat, keberanian, kebiasaan hidup keseharian masyrakat
-            Papua yang harmonis dan bahagia</span
-          >
+          <span><b>Batik Asmat</b><br />Motif seni yang menggambarkan budaya,
+          tradisi, dan kehidupan harmonis masyarakat Papua</span>
           <a href="#">Order Sekarang</a>
         </div>
         <div>
           <img src="img/jawa.png" alt="Sepatu" />
           <p>Jawa</p>
           <span>Rp 2.500.000,00</span>
-          <span
-            ><b>Batik Tujuh Rupa</b><br />Motif karya seni yang kaya akan nuansa
-            alam. Menggabungkan unsur budaya lokal dan etnis Tionghoa yang
-            mencerminkan akulturasi budaya yang unik dan khas</span
-          >
+          <span><b>Batik Tujuh Rupa</b><br />Motif kaya nuansa alam yang
+          mencerminkan akulturasi budaya lokal dan Tionghoa</span>
           <a href="#">Order Sekarang</a>
         </div>
       </div>
     </section>
+
     <section class="footer-info">
       <div class="ending">
         <div>
@@ -127,19 +135,19 @@
         </div>
         <div id="Tentang">
           <h3>Tentang kami</h3>
-          <a href="#">Perusahan</a>
+          <a href="#">Perusahaan</a>
           <a href="#">Visi dan Misi</a>
           <a href="#">Nilai brand</a>
         </div>
         <div>
           <h3>Alamat</h3>
           <a href="#">Jl Sambaliung Gedung A24</a>
-          <p>Samarinda utara</p>
+          <p>Samarinda Utara</p>
           <p>Kode pos : 11789</p>
         </div>
         <div>
           <h3>Layanan Pengaduan</h3>
-          <p>Jam kerja : Senin - Jumat, 07.30 WITA - 17.00 WITA</p>
+          <p>Jam kerja : Senin - Jumat, 07.30 - 17.00 WITA</p>
           <p>Email : <a href="#">AerostreetXwonderful62@gmail.com</a></p>
           <p>Telp : <a href="#">+6281268735096</a></p>
         </div>
@@ -148,32 +156,29 @@
         <div class="footer-items">
           <div class="footer-item">
             <a href="#" id="Youtube"><i data-feather="youtube"></i></a>
-            <p>AerostreetXwonderfulIndonesi</p>
+            <p>AerostreetXwonderfulIndonesia</p>
           </div>
           <div class="footer-item">
-            <a href="#" id="instgaram"><i data-feather="instagram"></i></a>
-            <p>@AerostreetXwonderfulIndonesi</p>
+            <a href="#" id="Instagram"><i data-feather="instagram"></i></a>
+            <p>@AerostreetXwonderfulIndonesia</p>
           </div>
           <div class="footer-item">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M12 2c1.2 0 2.4.5 3.3 1.4.9.9 1.4 2.1 1.4 3.3 0 .3 0 .6-.1.9 1.1.8 2.4 1.2 3.9 1.2v3.4c-1.8 0-3.5-.5-5-1.4v6.6c0 3.4-2.7 6.1-6.1 6.1s-6.1-2.7-6.1-6.1 2.7-6.1 6.1-6.1c.2 0 .4 0 .6.1v3.5c-.2 0-.4-.1-.6-.1-1.4 0-2.6 1.2-2.6 2.6s1.2 2.6 2.6 2.6 2.6-1.2 2.6-2.6V2h3z"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2c1.2 0 2.4.5 3.3 1.4.9.9 1.4 2.1 1.4 3.3 0 .3 0 .6-.1.9 1.1.8 2.4 1.2 3.9 1.2v3.4c-1.8 0-3.5-.5-5-1.4v6.6c0 3.4-2.7 6.1-6.1 6.1s-6.1-2.7-6.1-6.1 2.7-6.1 6.1-6.1c.2 0 .4 0 .6.1v3.5c-.2 0-.4-.1-.6-.1-1.4 0-2.6 1.2-2.6 2.6s1.2 2.6 2.6 2.6 2.6-1.2 2.6-2.6V2h3z" />
             </svg>
-            <p>@AerostreetXwonderfulIndonesi</p>
+            <p>@AerostreetXwonderfulIndonesia</p>
           </div>
           <div class="footer-item">
             <a href="#" id="facebook"><i data-feather="facebook"></i></a>
-            <p>AerostreetXwonderfulIndonesi</p>
+            <p>AerostreetXwonderfulIndonesia</p>
           </div>
         </div>
       </footer>
     </section>
+
+    <script>
+      feather.replace();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

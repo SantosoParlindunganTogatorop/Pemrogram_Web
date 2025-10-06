@@ -1,0 +1,104 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.login-form {
+  border: 1px solid #ccc;
+  padding: 5px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-family: Poppins, sans-serif;
+}
+
+.input-group {
+  position: relative;
+  width: 300px;
+  margin: 6px auto;
+}
+
+.input-group span {
+  position: absolute;
+  left: 15px;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+.input-group input {
+  padding: 10px 10px 10px 45px;
+  width: 100%;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.options input[type="checkbox"] {
+  transform: scale(0.8);
+  vertical-align: middle;
+}
+
+.options label {
+  font-size: 11px;
+  color: #444;
+  vertical-align: middle;
+}
+
+.options a {
+  font-size: 10px;
+  color: #0066cc;
+  margin: 20px;
+}
+
+.submit-section {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.btn {
+  margin: 5px 0;
+  padding: 8px 100px;
+  cursor: pointer;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.register-link {
+  font-size: 10px;
+  color: #0066cc;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+}
+
+.terms {
+  font-size: 10px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.terms a {
+  color: #0066cc;
+}
