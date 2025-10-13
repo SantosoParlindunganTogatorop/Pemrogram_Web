@@ -1,13 +1,7 @@
 <?php
 session_start();
 
-// Jika belum login, redirect ke login
-if (!isset($_SESSION['username'])) {
-  header("Location: login.php?status=unauthorized");
-  exit;
-}
-
-$username = $_SESSION['username'];
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +16,10 @@ $username = $_SESSION['username'];
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
+    <div id="loginMessage">
+      Silahkan login terlebih dahulu!
+    </div>
+
     <nav class="navbar">
       <a href="#" class="navbar-logo">
         <span>Aerostreet X</span>
@@ -36,17 +34,44 @@ $username = $_SESSION['username'];
       </div>
       <div class="navbar-extra">
         <a href="#" id="search"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
-        <!-- <a href="#" id="user"><i data-feather="user"></i></a> -->
-        <a href="logout.php" id="logout" style="color: red;"><i data-feather="log-out"></i></a>
+        <!-- <a href="myorder.php" id="shopping-cart"><i data-feather="shopping-cart"></i></a> -->
+        <?php if ($username): ?>
+          <!-- Jika user sudah login, arahkan ke halaman pesanan -->
+          <a href="myorder.php" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+        <?php else: ?>
+          <!-- Jika belum login, tampilkan pesan login seperti tombol Order -->
+          <a href="#" id="shopping-cart" class="btn-order"><i data-feather="shopping-cart"></i></a>
+        <?php endif; ?>
+
+      <div class="user-menu">
+          <a href="#" id="user">
+              <?php if ($username): ?>
+                  <!-- Jika sudah login, tampilkan logo logout atau avatar -->
+                  <i data-feather="log-out"></i>
+              <?php else: ?>
+                  <!-- Jika belum login, tampilkan ikon user biasa -->
+                  <i data-feather="user"></i>
+              <?php endif; ?>
+          </a>
+          <div class="user-dropdown" id="userDropdown">
+              <?php if ($username): ?>
+                  <a href="logout.php" style="color: red; font-weight:bold;">Logout</a>
+              <?php else: ?>
+                  <a href="login.php">Login</a>
+                  <a href="register.php">Register</a>
+              <?php endif; ?>
+          </div>
+      </div>
+
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
         <a href="#" id="dark-mode-toggle"><i data-feather="moon"></i></a>
       </div>
+      
     </nav>
 
     <!-- Pesan selamat datang -->
     <div class="welcome">
-      <h3>Selamat datang, <?php echo htmlspecialchars($username); ?>!</h3>
+      <h3>Selamat datang <?php echo htmlspecialchars($username ?? '') ?></h3>
     </div>
 
 
@@ -74,7 +99,9 @@ $username = $_SESSION['username'];
         Indonesia. Nyaman dipakai sehari-hari, desain stylish, dan punya nilai
         kebanggaan karena mengangkat identitas lokal.
       </p>
-      <a href="#belanja" class="btn-belanja">Belanja Sekarang</a>
+      <!-- <a href="#belanja" class="btn-belanja">Belanja Sekarang</a> -->
+       <!-- <a href="#belanja" class="btn-belanja btn-order">Belanja Sekarang</a> -->
+
     </section>
 
     <!-- Scrolling produk -->
@@ -87,7 +114,9 @@ $username = $_SESSION['username'];
           <span>Rp 2.500.000,00</span>
           <span><b>Ornamen Pepatran</b><br />Motif karya seni dari tanaman
           merambat yang digunakan untuk menghias rumah atau tempat suci di Bali</span>
-          <a href="#">Order Sekarang</a>
+          <!-- <a href="#">Order Sekarang</a> -->
+           <a href="order.php?produk=bali" class="btn-order">Order Sekarang</a>
+
         </div>
         <div>
           <img src="img/sumatera.png" alt="Sepatu" />
@@ -95,7 +124,9 @@ $username = $_SESSION['username'];
           <span>Rp 2.500.000,00</span>
           <span><b>Gorga Simeol-Meol</b><br />Motif karya seni dari sulur tanaman
           sebagai simbol sukacita, kesehatan, serta panjang umur bagi generasi</span>
-          <a href="#">Order Sekarang</a>
+          <!-- <a href="#">Order Sekarang</a> -->
+           <a href="order.php?produk=sumatera" class="btn-order">Order Sekarang</a>
+
         </div>
         <div>
           <img src="img/kalimantan.png" alt="Sepatu" />
@@ -103,7 +134,9 @@ $username = $_SESSION['username'];
           <span>Rp 2.500.000,00</span>
           <span><b>Motif Dayak</b><br />Motif seni yang mencerminkan hubungan erat antara
           manusia, alam, dan dunia spiritual</span>
-          <a href="#">Order Sekarang</a>
+          <!-- <a href="#">Order Sekarang</a> -->
+          <a href="order.php?produk=kalimantan" class="btn-order">Order Sekarang</a>
+
         </div>
         <div>
           <img src="img/papua.png" alt="Sepatu" />
@@ -111,7 +144,9 @@ $username = $_SESSION['username'];
           <span>Rp 2.500.000,00</span>
           <span><b>Batik Asmat</b><br />Motif seni yang menggambarkan budaya,
           tradisi, dan kehidupan harmonis masyarakat Papua</span>
-          <a href="#">Order Sekarang</a>
+          <!-- <a href="#">Order Sekarang</a> -->
+          <a href="order.php?produk=papua" class="btn-order">Order Sekarang</a>
+
         </div>
         <div>
           <img src="img/jawa.png" alt="Sepatu" />
@@ -119,7 +154,9 @@ $username = $_SESSION['username'];
           <span>Rp 2.500.000,00</span>
           <span><b>Batik Tujuh Rupa</b><br />Motif kaya nuansa alam yang
           mencerminkan akulturasi budaya lokal dan Tionghoa</span>
-          <a href="#">Order Sekarang</a>
+          <!-- <a href="#">Order Sekarang</a> -->
+          <a href="order.php?produk=jawa" class="btn-order">Order Sekarang</a>
+
         </div>
       </div>
     </section>
@@ -178,6 +215,9 @@ $username = $_SESSION['username'];
 
     <script>
       feather.replace();
+    </script>
+    <script>
+      const isLoggedIn = <?php echo $username ? 'true' : 'false'; ?>;
     </script>
     <script src="script.js"></script>
   </body>

@@ -1,10 +1,11 @@
+/* Reset dan dasar */
 * {
   margin: 0;
   padding: 0;
-  outline: none;
   box-sizing: border-box;
   border: none;
   text-decoration: none;
+  outline: none;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
   color: black;
 }
 
+/* Pesan selamat datang */
 .welcome {
   text-align: center;
   margin-top: 80px;
@@ -20,7 +22,7 @@ body {
   width: auto;
 }
 
-/* navbar */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -34,18 +36,16 @@ body {
   width: 100%;
 }
 
-/* logo */
+/* Logo */
 .navbar-logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  width: auto;
 }
 
 .navbar-logo span {
   color: white;
-  margin-right: 3px;
-  font-size: bold;
+  font-weight: bold;
 }
 
 .navbar-logo img {
@@ -54,7 +54,7 @@ body {
   width: auto;
 }
 
-/* menu */
+/* Menu navbar */
 .navbar-nav {
   display: flex;
   gap: 2rem;
@@ -89,7 +89,7 @@ body {
   color: #b6895b;
 }
 
-/* icons */
+/* Icon navbar extra */
 .navbar-extra {
   display: flex;
   align-items: center;
@@ -98,28 +98,43 @@ body {
 
 .navbar-extra a {
   color: white;
-  text-decoration: none;
   font-size: 1.2rem;
 }
 
-/* sale */
+/* User menu */
+.user-menu a#user,
+.user-menu .logout-link {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.user-menu a#user:hover,
+.user-menu .logout-link:hover {
+  color: #b6895b;
+}
+
+/* Sale section */
 .brand {
   text-align: center;
-  padding: 1rem;
+  padding-bottom: 1rem;
   background-color: rgb(233, 228, 228);
-  padding-top: 70px;
+  padding-top: 2rem;
 }
+
 .brand a {
   text-decoration: underline;
   color: #222;
 }
 
-/* vidio */
+/* Video */
 .watch {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px auto;
+  margin: 0 auto;
   height: 80vh;
   background-color: black;
 }
@@ -127,48 +142,27 @@ body {
 .watch video {
   width: 80%;
   max-width: 1200px;
-  height: 300px;
-  border-radius: 10px;
   height: 90%;
+  border-radius: 10px;
 }
 
-/* paragraf */
+/* Introduction */
 .introduction {
   padding: 1rem;
-  align-items: center;
+  text-align: center;
 }
 
 .introduction p {
   font-size: 0.8rem;
   line-height: 1.6;
   max-width: 700px;
-  margin: 0.5rem;
+  margin: 0.5rem auto;
 }
 
-.btn-belanja {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background-color: #111;
-  color: #fff;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s;
-  margin: 0 0.5rem;
-}
-
-.btn-belanja:hover {
-  background-color: #b6895b;
-}
-
-/* produk */
+/* Produk */
 .produk {
   padding: 2rem;
   text-align: center;
-}
-
-.produk a:hover {
-  text-decoration: underline;
-  color: #2582a9;
 }
 
 .produk h2 {
@@ -178,7 +172,7 @@ body {
 
 .produk p {
   font-weight: bold;
-  margin: 1rem;
+  margin: 1rem 0;
   font-size: 1.3rem;
 }
 
@@ -188,22 +182,11 @@ body {
   margin: 1rem auto;
 }
 
-.scroll a {
-  display: inline-block;
-  /* margin: auto 0 0.2rem; */
-  margin-top: auto;
-  margin-bottom: 1rem;
-  color: black;
-  padding: 0.7rem 0.7rem;
-  background-color: #d8d4d1;
-  border-radius: 0.2rem;
-}
-
 .scroll {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
-  padding: 1rem o;
+  padding: 1rem;
   scrollbar-width: thin;
 }
 
@@ -227,7 +210,17 @@ body {
   border-radius: 8px;
 }
 
-/* penutup */
+.scroll a {
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  color: black;
+  padding: 0.7rem;
+  background-color: #d8d4d1;
+  border-radius: 0.2rem;
+}
+
+/* Footer */
 .ending {
   display: flex;
   justify-content: center;
@@ -249,22 +242,17 @@ body {
   color: #333;
 }
 
-.ending p a {
-  display: inline;
-}
 .ending a:hover {
   color: #2582a9;
   text-decoration: underline;
 }
 
-/* footer */
 .footer-items {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 90%;
   margin: 2rem auto;
-  text-align: left;
   gap: 4rem;
 }
 
@@ -285,7 +273,6 @@ footer {
   padding: 2rem 0;
 }
 
-/* Dark mode */
 /* Dark mode */
 .dark-mode {
   background-color: #121212;
@@ -320,8 +307,62 @@ footer {
   color: #ccc;
 }
 
-/* Media */
+.user-menu {
+  position: relative;
+}
 
+.user-dropdown {
+  display: none; /* default hidden */
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.user-dropdown.show {
+  display: flex; /* tampilkan ketika aktif */
+}
+
+.user-dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: black;
+  text-align: center;
+  /* font-weight: san; */
+}
+
+.user-dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+#loginMessage {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: rgb(255, 0, 0);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  z-index: 10000;
+  font-weight: bold;
+}
+
+.user-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+/* Hamburger menu */
 #hamburger-menu {
   display: none;
 }
@@ -346,7 +387,6 @@ footer {
     transition: 0.5s;
     display: flex;
     gap: 0.1rem;
-    margin-left: 0.5rem;
   }
 
   .navbar-nav a {
@@ -354,10 +394,6 @@ footer {
     margin: 1rem 0;
     color: black;
     font-size: 1.2rem;
-  }
-
-  .navbar-nav a:hover {
-    color: #b6895b;
   }
 
   .navbar-nav.active {
@@ -377,13 +413,11 @@ footer {
     right: 1rem;
   }
 
-  /* Video biar full lebar */
   .watch video {
     width: 90%;
     height: 50%;
   }
 
-  /* Produk scroll jadi lebih rapat */
   .scroll {
     gap: 1rem;
     padding: 1rem;
@@ -391,15 +425,10 @@ footer {
   }
 
   .scroll div {
-    max-width: 1000%; /* lebih gede biar enak di-scroll */
+    max-width: 1000%;
   }
 
-  /* Footer stack ke bawah */
-  .footer-items {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
+  .footer-items,
   .ending {
     flex-direction: column;
     gap: 1rem;

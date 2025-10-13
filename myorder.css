@@ -1,0 +1,190 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  min-height: 100vh;
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* Container utama */
+.c {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  padding: 30px 40px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Judul */
+.t {
+  font-size: 1.8rem;
+  color: #1e40af;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Pesan kosong */
+.s {
+  font-size: 1rem;
+  text-align: center;
+  color: #6b7280;
+  background: #f9fafb;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+/* Container semua pesanan */
+.orders-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Kartu pesanan */
+.order-card {
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  padding: 16px 20px;
+  transition: all 0.2s ease;
+  border-left: 5px solid #2563eb;
+}
+
+.order-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Header kartu */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.order-header h3 {
+  font-size: 1.1rem;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.order-header .size {
+  font-weight: 500;
+  color: #3b82f6;
+}
+
+.order-header .date {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Isi kartu */
+.order-body p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Aksi tombol */
+.order-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn-edit,
+.btn-delete {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.btn-edit {
+  background-color: #3b82f6;
+}
+
+.btn-edit:hover {
+  background-color: #2563eb;
+}
+
+.btn-delete {
+  background-color: #ef4444;
+}
+
+.btn-delete:hover {
+  background-color: #dc2626;
+}
+
+/* Link kecil */
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .c {
+    padding: 20px;
+  }
+
+  .t {
+    font-size: 1.4rem;
+  }
+
+  .order-card {
+    padding: 14px;
+  }
+
+  .order-header h3 {
+    font-size: 1rem;
+  }
+
+  .order-body p {
+    font-size: 0.85rem;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+}
